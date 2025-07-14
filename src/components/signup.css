@@ -1,0 +1,84 @@
+/* Signup background */
+.signup-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('./abstract-low-poly-background-triangles-light-blue-colors_444390-3833.avif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Signup container styles - Made smaller */
+.signup-container {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px; /* Slightly smaller radius */
+  box-shadow: 0 6px 20px rgba(31, 110, 212, 0.15); /* Lighter shadow */
+  padding: 25px; /* Reduced padding */
+  width: 360px; /* Reduced width from 400px */
+  margin: 20px;
+  border: 1px solid rgba(200, 230, 255, 0.5);
+}
+
+/* Title styles */
+.signup-title {
+  font-size: 22px; /* Slightly smaller */
+  margin-bottom: 20px; /* Reduced spacing */
+  color: #2a5885;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Form group styles */
+.form-group {
+  margin-bottom: 15px; /* Reduced spacing */
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px; /* Slightly smaller */
+  font-weight: 500;
+  margin-bottom: 6px; /* Reduced spacing */
+  color: #4a6fa5;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 14px; /* Slightly reduced padding */
+  border: 1px solid #c7d8f0;
+  border-radius: 6px; /* Slightly smaller radius */
+  font-size: 14px; /* Slightly smaller */
+  background-color: #f8fbfe;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Signup button styles */
+.signup-btn {
+  width: 100%;
+  background-color: #4da1ff;
+  color: white;
+  border: none;
+  padding: 12px; /* Slightly reduced */
+  border-radius: 6px; /* Slightly smaller radius */
+  cursor: pointer;
+  font-size: 15px; /* Slightly smaller */
+  font-weight: 600;
+  margin-top: 8px; /* Reduced spacing */
+  transition: all 0.3s ease;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .signup-container {
+    width: 85%; /* Slightly more compact on mobile */
+    padding: 20px;
+  }
+  
+  .signup-title {
+    font-size: 20px;
+  }
+}

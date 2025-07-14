@@ -1,0 +1,693 @@
+/* ===== MAIN CONTAINER ===== */
+.agreements-container {
+  padding: 2rem;
+  max-width: 150%;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+ 
+
+/* ===== LOGOUT BUTTON WITH ICON AFTER TEXT ===== */
+.logout-button {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  padding: 0.6rem 0.8rem 0.6rem 1.2rem; /* Adjusted padding */
+  background-color: #f56565;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.logout-button:hover {
+  background-color: #e53e3e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Changed from ::before to ::after */
+.logout-button::after {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M16 17v-3h-5v-4h5V7l5 5-5 5zm-9-1H3V6h4V4H3c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h4v-2z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: transform 0.2s ease;
+}
+
+.logout-button:hover::after {
+  transform: translateX(2px); /* Changed direction of animation */
+}
+/* ===== HEADER SECTION (EXACTLY AS YOU WANT IT) ===== */
+.header-section {
+  background: #f7fafc;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  align-items: center;
+  text-align: center;
+  color: #2d3748;
+}
+
+.agreements-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+  color: #1a365d;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+} 
+
+
+/* ===== STATUS DASHBOARD ===== */
+.status-dashboard {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.status-card {
+  flex: 1;
+  padding: 1.5rem;
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.status-card h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #2d3748;
+  font-weight: 700;
+}
+
+.status-card p {
+  margin: 0.5rem 0 0;
+  font-size: 1.75rem;
+  color: #1a365d;
+  font-weight: 700;
+}
+
+/* ===== STATUS COLORS ===== */
+.status-card.active {
+  background: #e6fffa;
+  color: #38a169;
+}
+
+.status-card.expired {
+  background: #fff5f5;
+  color: #e53e3e;
+}
+
+.status-card.closed {
+  background: #edf2f7;
+  color: #718096;
+}
+
+.status-card.in-process {
+  background: #ebf4ff;
+  color: #3182ce;
+}
+
+/* ===== HOVER EFFECT ===== */
+.status-card:hover {
+  transform: translateY(-5px);
+  background: #e2e8f0;
+}
+
+
+
+/* ===== EDIT BUTTON ===== */
+.edit-button {
+  padding: 0.5rem 1rem;
+  background-color: #90cdf4;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.edit-button:hover {
+  background-color: #63b3ed;
+  transform: translateY(-2px);
+}
+
+/* Move the renewal card to top center just below title */
+.renewal-dashboard {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: -0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.renewal-card {
+  background-color: #fff5f5; /* Light red background */
+  color: #e53e3e; /* Red text color */
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #feb2b2; /* Light red border */
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.renewal-card:hover {
+  background-color: #fed7d7;
+  transform: translateY(-2px);
+}
+
+
+
+
+
+/* ===== CONTROLS (UNCHANGED) ===== */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  width: 150%;
+}
+
+.add-button,
+.export-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.add-button {
+  background-color: #90cdf4;
+  color: #1a202c;
+}
+
+.add-button:hover {
+  background-color: #63b3ed;
+  transform: translateY(-2px);
+}
+
+.export-button {
+  background-color: #faf089;
+  color: #1a202c;
+}
+
+.export-button:hover {
+  background-color: #f6e05e;
+  transform: translateY(-2px);
+}
+
+.search-container {
+  display: flex;
+  flex: 1;
+  gap: 1rem;
+  align-items: center;
+  max-width: 600px;
+}
+
+.search-input {
+  flex-grow: 1;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #63b3ed;
+  box-shadow: 0 0 0 3px rgba(99, 179, 237, 0.3);
+}
+
+.search-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #68d391;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #48bb78;
+  transform: translateY(-2px);
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+/* ===== STATUS FILTER DROPDOWN ===== */
+.filter-container {
+  position: relative;
+  min-width: 180px;
+}
+
+.filter-dropdown {
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  background-color: white;
+  font-size: 0.95rem;
+  color: #4b5563;
+  cursor: pointer;
+  appearance: none;
+  transition: all 0.2s ease;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1.25rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  height: 48px;
+  width: 100%;
+}
+
+.filter-dropdown:hover {
+  border-color: #9ca3af;
+}
+
+.filter-dropdown:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Custom arrow container (alternative approach) */
+.filter-container::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #6b7280;
+  pointer-events: none;
+}
+
+/* Status-specific options styling */
+.filter-dropdown option {
+  padding: 0.5rem;
+}
+
+.filter-dropdown option[value="Active"] {
+  color: #38a169;
+}
+
+.filter-dropdown option[value="Expired"] {
+  color: #e53e3e;
+}
+
+.filter-dropdown option[value="Closed"] {
+  color: #718096;
+}
+
+.filter-dropdown option[value="In Process"] {
+  color: #3182ce;
+}
+/* ===== TABLE WRAPPER WITH SCROLLING ===== */
+.table-scroll-container {
+  width: 150%;
+  overflow-x: auto; /* Enables horizontal scrolling */
+  margin: 2rem 0;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+}
+
+/* ===== TABLE ===== */
+.agreements-table {
+  width: 150%;
+  min-width: 1600px; /* Ensures a horizontal scroll for large datasets */
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  color: #2d3748;
+  table-layout: fixed; /* Added to enforce fixed column widths */
+}
+
+/* ===== TABLE HEADERS ===== */
+.agreements-table th {
+  padding: 1rem;
+  background-color: #5ea6ee; /* Subtle light grey */
+  color: #1a365d; /* Dark blue text */
+  font-weight: 700;
+  text-align: left;
+  border: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  white-space: nowrap;
+  width: 150px; /* Fixed width for all headers */
+}
+
+/* ===== TABLE DATA ===== */
+.agreements-table td {
+  padding: 1rem;
+  text-align: left;
+  border: 1px solid #e2e8f0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Truncates long text with ellipsis */
+  background-color: #ffffff; /* Consistent row background */
+  width: 150px; /* Fixed width for all cells */
+}
+
+/* ===== PROPORTIONAL COLUMN WIDTHS ===== */
+.agreements-table th:nth-child(1),
+.agreements-table td:nth-child(1) {
+  width:150px; /*SBU Head*/
+}
+
+.agreements-table th:nth-child(2),
+.agreements-table td:nth-child(2) {
+  width: 150px; /* Agreement Status */
+}
+
+.agreements-table th:nth-child(3),
+.agreements-table td:nth-child(3) {
+  width: 150px; /* Agreement Category */
+}
+
+.agreements-table th:nth-child(4),
+.agreements-table td:nth-child(4) {
+  width: 250px; /* Agreement Type */
+}
+
+.agreements-table th:nth-child(5),
+.agreements-table td:nth-child(5) {
+  width: 150px; /* Line of Business */
+}
+
+.agreements-table th:nth-child(6),
+.agreements-table td:nth-child(6) {
+  width: 150px; /* Payment Term */
+}
+
+.agreements-table th:nth-child(7),
+.agreements-table td:nth-child(7) {
+  width: 150px; /* Remarks */
+}
+
+.agreements-table th:nth-child(8),
+.agreements-table td:nth-child(8) {
+  width: 150px; /* Counter Sign Status */
+}
+
+.agreements-table th:nth-child(9),
+.agreements-table td:nth-child(9) {
+  width: 150px; /* Start Date */
+}
+
+.agreements-table th:nth-child(10),
+.agreements-table td:nth-child(10) {
+  width: 150px; /* End Date */
+}
+
+.agreements-table th:nth-child(11),
+.agreements-table td:nth-child(11) {
+  width: 150px; /* Created At */
+}
+
+.agreements-table th:nth-child(12),
+.agreements-table td:nth-child(12) {
+  width: 150px; /* Action */
+}
+
+.agreements-table th:nth-child(13),
+.agreements-table td:nth-child(13) {
+  width: 150px; /* Action Taken Date */
+}
+
+.agreements-table th:nth-child(14),
+.agreements-table td:nth-child(14) {
+  width: 150px; /* Final Status */
+}
+
+.agreements-table th:nth-child(15),
+.agreements-table td:nth-child(15) {
+  width: 150px; /* Final Status Date */
+}
+
+.agreements-table th:nth-child(16),
+.agreements-table td:nth-child(16) {
+  width: 150px; /* Final Status Remark */
+}
+
+/* ===== ZEBRA STRIPING ===== */
+.agreements-table tbody tr:nth-child(even) td {
+  background-color: #f8fafc;
+}
+
+/* ===== HOVER EFFECT ===== */
+.agreements-table tbody tr:hover td {
+  background-color: #ebf8ff;
+}
+
+/* ===== STATUS COLORS ===== */
+.agreements-table td[data-status="Active"] {
+  color: #38a169;
+  font-weight: 600;
+}
+
+.agreements-table td[data-status="Expired"] {
+  color: #e53e3e;
+  font-weight: 600;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .agreements-table th,
+  .agreements-table td {
+    padding: 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  .table-scroll-container {
+    padding: 0.5rem; 
+  }
+}
+
+.save-button,
+.cancel-button {
+  border: none;
+  background-color: #4caf50; /* Green */
+  color: white;
+  padding: 5px 10px;
+  margin-right: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel-button {
+  background-color: #f44336; /* Red */
+}
+
+.save-button:hover,
+.cancel-button:hover {
+  opacity: 0.8;
+}
+
+/* Add these styles to your existing agreement.css */
+
+.renewal-needed {
+  color: orange;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.renewal-needed:hover {
+  text-decoration: none;
+}
+
+.editing-status {
+  color: orange;
+  font-weight: bold;
+}
+
+.renewed-status {
+  color: green;
+}
+
+.edit-input, .edit-select {
+  width: 100%;
+  padding: 4px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.save-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.save-button:hover {
+  background-color: #218838;
+}
+
+.cancel-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.cancel-button:hover {
+  background-color: #c82333;
+}
+
+/* Make sure your table cells have proper spacing */
+.agreements-table td {
+  padding: 8px;
+  vertical-align: middle;
+}
+
+.dashboard-container {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.chart-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.chart-container {
+
+  padding: 20px;
+  border-radius: 8px;
+
+  min-height: 200px;
+}
+
+.left-chart {
+  flex: 1;
+  margin-right: 10px;
+}
+.left-chart,h3{
+  text-align: center;
+}
+
+.right-chart {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.chart-wrapper {
+  height: 200px;
+}
+
+.empty-state {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-style: italic;
+}
+
+/* Pie chart container */
+.pie-chart-container {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+  min-width: 0; /* Allows flex item to shrink */
+}
+.pie-chart {
+  position: relative;
+  height: 250px;
+  width: 40%;
+  min-width: 200px; /* Minimum width for chart */
+}
+
+.renewal-card {
+  background-color: #fff5f5;
+  color: #e53e3e;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid #feb2b2;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  gap: 0.5rem;
+  white-space: nowrap;
+  align-items: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+  
+  .pie-chart {
+    height: 200px;
+  }
+  
+  .renewal-dashboard {
+    width: 10%;
+    justify-content: center;
+  }
+}
+
+
+
+/* Add any other existing styles you have */

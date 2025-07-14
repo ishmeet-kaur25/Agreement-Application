@@ -1,0 +1,90 @@
+/* General body styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Login background with a background image */
+.login-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('./abstract-low-poly-background-triangles-light-blue-colors_444390-3833.avif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+/* Login container styles */
+.login-container {
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+  box-shadow: 0 4px 15px rgba(0, 100, 200, 0.2); /* Blue-tinted shadow */
+  border-radius: 16px;
+  padding: 2rem;
+  width: 400px;
+  text-align: center;
+  border: 1px solid rgba(200, 230, 255, 0.5); /* Light blue border */
+}
+
+/* Input fields */
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #a8d0ff; /* Light blue border */
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: rgba(240, 248, 255, 0.8); /* Very light blue background */
+}
+
+.login-container input:focus {
+  outline: 2px solid #4da1ff; /* Blue focus outline */
+  border-color: transparent;
+}
+
+/* Login button styles */
+.login-btn {
+  width: 100%;
+  background-color: #4da1ff; /* Medium blue */
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.login-btn:hover {
+  background-color: #2d8bff; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+  box-shadow: 0 4px 8px rgba(0, 100, 200, 0.3);
+}
+
+/* Title Styles */
+.login-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #2a5885; /* Dark blue-gray */
+}
+
+/* Forget password link */
+.forget-password {
+  display: block;
+  margin-top: 15px;
+  color: #4da1ff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.forget-password:hover {
+  text-decoration: underline;
+}
+
+
+  
+
+  
