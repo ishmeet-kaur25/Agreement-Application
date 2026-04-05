@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Homepage from "./components/Homepage";
 import Signup from "./components/signup";
