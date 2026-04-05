@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./AddData.css";
 
+
 function AddData() {
   const [formData, setFormData] = useState({
     agreementCategory: "",

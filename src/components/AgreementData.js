@@ -399,46 +399,63 @@ const barChartOptions = {
     return dateString ? new Date(dateString).toISOString().split("T")[0] : "N/A";
   };
 
-  const handleSave = async () => {
-    try {
-      const formattedData = {
-        "Agreement Status": editedData["Agreement Status"],
-        "Agreement Category": editedData["Agreement Category"],
-        "Agreement Type": editedData["Agreement Type"],
-        "Line Of Business": editedData["Line Of Business"],
-        "Payment Term": editedData["Payment Term"],
-        "Remarks": editedData["Remarks"],
-        "Counter Sign Status": editedData["Counter Sign Status"],
-        "Action": editedData["Action"],
-        "start date": editedData["start date"],
-        "end date": editedData["end date"],
-        "SBU Head": editedData["SBU Head"],
-        "Action Taken Date": editedData["Action Taken Date"],
-        "Final Status": editedData["Final Status"],
-        "Final Status Date": editedData["Final Status Date"],
-        "Final Status Remark": editedData["Final Status Remark"]
-      };
+const handleSave = async () => {
+  try {
+    const formatDateForBackend = (date) => {
+      if (!date) return null;
+      const d = new Date(date);
+      const year = d.getFullYear();
+      const month = String(d.getMonth() + 1).padStart(2, "0");
+      const day = String(d.getDate()).padStart(2, "0");
+      return `${year}-${month}-${day}`;
+    };
 
-      const response = await axios.put(
-        `http://localhost:5000/agreement/${editedData.id}`,
-        formattedData
+    const formattedData = {
+      id: editedData.id, // Ensure ID is passed if needed
+      "Agreement Status": editedData["Agreement Status"],
+      "Agreement Category": editedData["Agreement Category"],
+      "Agreement Type": editedData["Agreement Type"],
+      "Line Of Business": editedData["Line Of Business"],
+      "Payment Term": editedData["Payment Term"],
+      "Remarks": editedData["Remarks"],
+      "Counter Sign Status": editedData["Counter Sign Status"],
+      "Action": editedData["Action"],
+      "start date": formatDateForBackend(editedData["start date"]),
+      "end date": formatDateForBackend(editedData["end date"]),
+      "SBU Head": editedData["SBU Head"],
+      "Action Taken Date": formatDateForBackend(editedData["Action Taken Date"]),
+      "Final Status": editedData["Final Status"],
+      "Final Status Date": formatDateForBackend(editedData["Final Status Date"]),
+      "Final Status Remark": editedData["Final Status Remark"],
+      "created_at": formatDateForBackend(editedData["Created at"]), // fixed
+      "SBU unit": editedData["SBU unit"],
+      "Account Manager": editedData["Account Manager"],
+      "Agreement Detail": editedData["Agreement Detail"]
+    };
+
+    console.log('Sending data to backend:', formattedData);
+
+    const response = await axios.put(
+      `http://localhost:5000/agreement/${editedData.id}`,
+      formattedData
+    );
+
+    if (response.data.success) {
+      const updated = agreement.map((ag) =>
+        ag.id === editedData.id ? { ...ag, ...formattedData } : ag
       );
-
-      if (response.data.success) {
-        const updated = agreement.map((ag) =>
-          ag.id === editedData.id ? { ...ag, ...formattedData } : ag
-        );
-        setAgreement(updated);
-        setEditRowId(null);
-        calculateRenewalStatus(updated);
-      } else {
-        alert("Failed to save data: " + response.data.message);
-      }
-    } catch (err) {
-      console.error("Error saving data:", err);
-      alert("Failed to save data. Check console for details.");
+      setAgreement(updated);
+      setEditRowId(null);
+      calculateRenewalStatus(updated);
+    } else {
+      alert("Failed to save data: " + response.data.message);
     }
-  };
+  } catch (err) {
+    console.error("Error saving data:", err);
+    alert("Failed to save data. Check console for details.");
+  }
+};
+
 
   const calculateRenewalStatus = (data) => {
     const now = new Date();

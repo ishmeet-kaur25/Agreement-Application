@@ -192,13 +192,8 @@ app.put("/agreement/:id", async (req, res) => {
   const { id } = req.params;
   const updateData = req.body;
 
-  if (!updateData["Agreement Status"] || !updateData["Agreement Category"] ||
-      !updateData["Counter Sign Status"] || !updateData["Action"]) {
-    return res.status(400).json({
-      success: false,
-      message: "Required fields are missing."
-    });
-  }
+  
+  
 
   try {
     const columns = [];
