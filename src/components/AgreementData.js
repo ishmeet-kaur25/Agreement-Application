@@ -45,7 +45,7 @@ const [allAgreementTypes, setAllAgreementTypes] = useState([]);
   useEffect(() => {
     const fetchAgreement = async () => {
   try {
-    const response = await axios.get("http://localhost:5000/agreement");
+    const response = await axios.get("https://agreement-application-1.onrender.com/agreement");
     if (response.data.success) {
       const sortedData = response.data.data.sort(
         (a, b) => new Date(b.created_at) - new Date(a.created_at)
@@ -436,7 +436,7 @@ const handleSave = async () => {
     console.log('Sending data to backend:', formattedData);
 
     const response = await axios.put(
-      `http://localhost:5000/agreement/${editedData.id}`,
+      `https://agreement-application-1.onrender.com/agreement/${editedData.id}`,
       formattedData
     );
 

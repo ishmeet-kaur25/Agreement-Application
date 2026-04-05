@@ -13,7 +13,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:5000/login", { email, password });
+      const response = await axios.post("https://agreement-application-1.onrender.com/login", { email, password });
 
       if (response.data.success) {
         console.log("Navigating to AgreementData...");

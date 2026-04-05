@@ -12,7 +12,7 @@ function ForgetPassword() {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:5000/forget-password", {
+      const response = await axios.post("https://agreement-application-1.onrender.com/forget-password", {
         email,
         newPassword,
       });

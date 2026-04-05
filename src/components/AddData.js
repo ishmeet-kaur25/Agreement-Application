@@ -42,7 +42,7 @@ function AddData() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("http://localhost:5000/agreement", {
+      const response = await fetch("https://agreement-application-1.onrender.com/agreement", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
